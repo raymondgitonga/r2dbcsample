@@ -84,5 +84,18 @@ public class ItemHandler {
         );
     }
 
+    public Mono<ServerResponse> findSingleItem(ServerRequest serverRequest) {
+        String price = serverRequest.pathVariable("price");
+
+        Mono<Item> itemByPrice = itemRepository.findSingleItem(Double.parseDouble(price));
+
+        return itemByPrice.flatMap(item ->
+                ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(fromValue(item))
+                );
+
+    }
+
 
 }

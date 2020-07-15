@@ -24,7 +24,9 @@ public class ItemRouter {
                 .andRoute(DELETE("/v1/getAllItems"+"/{id}").and(accept(MediaType.APPLICATION_JSON)),
                         itemHandler::deleteItem)
                 .andRoute(PUT("/v1/getAllItems"+"/{id}").and(accept(MediaType.APPLICATION_JSON)),
-                        itemHandler::updateItem);
+                        itemHandler::updateItem)
+                .andRoute(GET("/v1/getAllItemByPrice"+"/{price}").and(accept(MediaType.APPLICATION_JSON)),
+                        itemHandler::findSingleItem);
 
     }
 }
