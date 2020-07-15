@@ -94,8 +94,5 @@ public class ItemHandler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(fromValue(item))
                 );
-
     }
-
-
 }
