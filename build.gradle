@@ -31,11 +31,6 @@ dependencies {
 	}
 	testImplementation 'io.projectreactor:reactor-test'
 }
-dependencyManagement {
-	imports {
-		mavenBom 'org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M3'
-	}
-}
 test {
 	useJUnitPlatform()
 }
