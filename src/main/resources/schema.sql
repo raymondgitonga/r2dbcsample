@@ -1,0 +1,2 @@
+-- DROP TABLE IF EXISTS item;
+-- CREATE TABLE item (id INTEGER PRIMARY KEY, description VARCHAR(255), price DOUBLE);
