@@ -21,4 +21,13 @@ public class ItemHandler {
                 .body(itemRepository.findAll(), Item.class);
     }
 
+    //getById
+
+    //createItem
+
+    //deleteById
+
+    //updateItem
+
+
 }

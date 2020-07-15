@@ -20,12 +20,19 @@ repositories {
 }
 
 dependencies {
+
+	//spring
 	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	runtime 'dev.miku:r2dbc-mysql:${r2dbc.mysql}'
-	compileOnly 'org.projectlombok:lombok'
+
+	//r2dbc
 	implementation("dev.miku:r2dbc-mysql:0.8.2.RELEASE")
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	//test
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
