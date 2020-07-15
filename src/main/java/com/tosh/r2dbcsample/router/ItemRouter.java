@@ -16,7 +16,15 @@ public class ItemRouter {
     public RouterFunction<ServerResponse> itemsRoute(ItemHandler itemHandler) {
         return RouterFunctions
                 .route(GET("/v1/getAllItems").and(accept(MediaType.APPLICATION_JSON)),
-                        itemHandler::getAllItems);
+                        itemHandler::getAllItems)
+                .andRoute(GET("/v1/getAllItems"+"/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                        itemHandler::getById)
+                .andRoute(POST("/v1/getAllItems").and(accept(MediaType.APPLICATION_JSON)),
+                        itemHandler::createItem)
+                .andRoute(DELETE("/v1/getAllItems"+"/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                        itemHandler::deleteItem)
+                .andRoute(PUT("/v1/getAllItems"+"/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                        itemHandler::updateItem);
 
     }
 }
